@@ -3,178 +3,328 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md Abdur Rahaman | AI Researcher & CSE Graduate</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Md Abdur Rahaman | AI Researcher</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --text-main: #1f2937;
-            --text-muted: #6b7280;
-            --bg-body: #f9fafb;
-            --bg-card: #ffffff;
+            --primary: #1d4ed8;
+            --text-main: #111827;
+            --text-muted: #4b5563;
+            --bg-body: #ffffff;
+            --bg-card: #f9fafb;
             --border: #e5e7eb;
+            --accent: #059669; 
         }
+        
+        * { box-sizing: border-box; }
+        
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             line-height: 1.6;
             color: var(--text-main);
-            max-width: 850px;
+            max-width: 820px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 24px;
             background-color: var(--bg-body);
+            -webkit-font-smoothing: antialiased;
         }
-        h1, h2, h3 { color: #111827; margin-top: 0; }
+
+        /* Typography */
+        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.025em; }
         h2 { 
-            border-bottom: 2px solid var(--primary); 
-            padding-bottom: 8px; 
-            margin-top: 40px; 
-            margin-bottom: 20px;
-            font-size: 1.5rem;
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            margin-top: 56px; 
+            margin-bottom: 24px; 
+            border-bottom: 1px solid var(--border); 
+            padding-bottom: 8px;
         }
-        a { color: var(--primary); text-decoration: none; font-weight: 500; }
-        a:hover { text-decoration: underline; }
+        h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 6px; margin-top: 0; }
         
-        /* Header */
-        .header { margin-bottom: 30px; }
-        .header h1 { font-size: 2.5rem; margin-bottom: 5px; letter-spacing: -0.025em; }
-        .header .subtitle { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 15px; }
-        .contact-links { display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.95rem; }
-        .contact-links span { color: var(--text-muted); }
-
-        /* Bio & Education */
-        .bio-box {
-            background: var(--bg-card);
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid var(--primary);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-            font-size: 1.05rem;
+        p { color: var(--text-muted); margin-top: 0; margin-bottom: 16px; }
+        
+        a { 
+            color: var(--primary); 
+            text-decoration: none; 
+            font-weight: 500;
+            transition: opacity 0.2s;
         }
-        .edu-item { margin-bottom: 15px; }
-        .edu-item strong { display: block; font-size: 1.1rem; }
-        .edu-item .meta { color: var(--text-muted); font-size: 0.95rem; }
+        a:hover { text-decoration: underline; opacity: 0.8; }
 
-        /* Tags */
-        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-        .tag {
-            background: #e0e7ff;
-            color: #3730a3;
-            padding: 4px 12px;
-            border-radius: 16px;
-            font-size: 0.85rem;
+        /* Hero / Intro */
+        .profile-header { 
+            display: flex; 
+            align-items: center; 
+            gap: 32px; 
+            margin-bottom: 24px; 
+        }
+        .profile-pic { 
+            width: 140px; 
+            height: 140px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 4px solid #f3f4f6; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+        }
+
+        .status {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1e40af;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            margin-bottom: 24px;
             font-weight: 500;
         }
+        .status strong { font-weight: 700; }
 
-        /* Cards (Publications & Projects) */
-        .card {
-            background: var(--bg-card);
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            transition: transform 0.2s, box-shadow 0.2s;
+        .bio {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            line-height: 1.7;
+            margin-bottom: 40px;
         }
-        .card:hover { transform: translateY(-3px); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .card h3 { margin-bottom: 8px; font-size: 1.15rem; }
-        .card .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; font-style: italic; }
-        
-        /* Achievements */
-        .achievement {
+        .bio strong { color: var(--text-main); }
+
+        /* Contact Links */
+        .links {
             display: flex;
-            align-items: center;
-            gap: 15px;
-            background: #fef3c7;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #fbbf24;
+            gap: 16px;
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
         }
-        .achievement .icon { font-size: 1.5rem; }
+        .links a { color: var(--text-muted); font-weight: 500; }
+        .links a:hover { color: var(--primary); }
+        .divider { color: var(--border); }
+
+        /* Cards */
+        .item-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .item-card:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .venue {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #059669;
+            background-color: #ecfdf5;
+            padding: 4px 10px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .authors { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 8px; }
+        .authors strong { color: var(--text-main); font-weight: 600; }
+        .item-links { margin-top: 12px; font-size: 0.9rem; display: flex; gap: 16px; }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+        .skill-tag {
+            background: #f3f4f6;
+            color: #374151;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 80px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* Responsive adjustments for mobile */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            body { padding: 40px 20px; }
+            .profile-header { 
+                flex-direction: column; 
+                text-align: center; 
+                gap: 16px;
+            }
+            .links { justify-content: center; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Md Abdur Rahaman</h1>
-        <div class="subtitle">CSE Graduate & AI Researcher</div>
-        <div class="contact-links">
-            <span>📍 Dhaka, Bangladesh</span>
-            <span>✉️ abdur.rahaman03155@gmail.com</span>
-            <a href="#">LinkedIn</a>
-            <a href="#">GitHub</a>
-            <a href="#">Kaggle</a>
+    <!-- Hero Section -->
+    <header>
+        <div class="profile-header">
+            <img src="photo.jpg" alt="Md Abdur Rahaman" class="profile-pic">
+            <div>
+                <h1>Md Abdur Rahaman</h1>
+                <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 12px; font-weight: 500;">CSE Graduate & AI Researcher</p>
+            </div>
         </div>
-    </div>
 
-    <div class="bio-box">
-        Computer Science and Engineering graduate from <strong>Rajshahi University of Engineering & Technology (RUET)</strong> with a strong academic background and research interests in Computer Vision, Deep Learning, Medical Image Analysis, and Environmental Object Detection. Experienced in developing attention-based architectures (RepViT, Transformers) for melanoma and brain tumor classification. Currently seeking a PhD position to advance research in medical computer vision and multimodal learning.
-    </div>
-
-    <h2>Research Interests & Technical Skills</h2>
-    <div class="tags">
-        <span class="tag">Medical Image Analysis</span>
-        <span class="tag">Computer Vision</span>
-        <span class="tag">Deep Learning</span>
-        <span class="tag">RepViT & Transformers</span>
-        <span class="tag">PyTorch</span>
-        <span class="tag">LangChain & RAG</span>
-        <span class="tag">YOLO11m</span>
-        <span class="tag">OpenCV</span>
-        <span class="tag">Python / C++</span>
-    </div>
-
-    <h2>🏆 Achievements</h2>
-    <div class="achievement">
-        <div class="icon">🥈</div>
-        <div>
-            <strong>NeurIPS Open Polymer Prediction 2025</strong><br>
-            <span style="color: var(--text-muted);">Silver Medal — Ranked 112th out of 2,240 teams globally for machine-learning-based polymer property prediction.</span>
+        <div class="links">
+            <a href="mailto:abdur.rahaman03155@gmail.com">Email</a>
+            <span class="divider">/</span>
+            <a href="#" target="_blank">LinkedIn</a>
+            <span class="divider">/</span>
+            <a href="#" target="_blank">GitHub</a>
+            <span class="divider">/</span>
+            <a href="#" target="_blank">Kaggle</a>
+            <span class="divider">/</span>
+            <a href="CV.pdf" target="_blank">CV</a>
         </div>
+        
+        <div class="status">
+            🎓 <strong>Prospective PhD Student:</strong> I am currently seeking PhD positions in Computer Vision and Medical AI for Fall 2026 / Spring 2027. If you are recruiting, please feel free to reach out via email!
+        </div>
+
+        <div class="bio">
+            I am a Computer Science and Engineering graduate from <strong>Rajshahi University of Engineering & Technology (RUET)</strong>. My research interests lie in <strong>Computer Vision</strong>, <strong>Deep Learning</strong>, and <strong>Medical Image Analysis</strong>. 
+            <br><br>
+            I have experience developing attention-based architectures (RepViT, Transformers) for melanoma and brain tumor classification, as well as environmental object detection. I am the first author of a submitted manuscript on frequency-domain deep learning, and I currently have multiple research projects under review at international conferences.
+        </div>
+    </header>
+
+    <!-- Awards Section -->
+    <h2>Awards</h2>
+    <div class="item-card" style="border-left: 4px solid #d97706; background-color: #fffbeb;">
+        <span class="venue" style="background-color: #fef3c7; color: #b45309;">NeurIPS 2025</span>
+        <h3>🥈 Silver Medal — Open Polymer Prediction Challenge</h3>
+        <p style="margin-bottom: 0;">Awarded a Silver Medal for machine-learning-based polymer property prediction. Ranked <strong>112th out of 2,240 global teams</strong>.</p>
     </div>
 
-    <h2>📚 Manuscripts Under Review</h2>
-    <div class="card">
+    <!-- Education Section -->
+    <h2>Education</h2>
+    <div class="item-card">
+        <span class="venue">RUET (2022 – 2026)</span>
+        <h3>B.Sc. in Computer Science & Engineering</h3>
+        <p style="margin-bottom: 8px;"><strong>CGPA:</strong> 3.61 / 4.00</p>
+        <p style="margin-bottom: 0;"><strong>Relevant Coursework:</strong> Computer Vision, Deep Learning, Machine Learning, Linear Algebra, Probability & Statistics, Data Structures & Algorithms.</p>
+    </div>
+
+    <!-- Publications Section -->
+    <h2>Selected Publications</h2>
+    
+    <div class="item-card">
+        <span class="venue">ICRPSET 2026 (Under Review)</span>
         <h3>MeLALight: Melanoma Classification Using Multi-Stage DCT-Based Frequency-Channel Attention Fusion on RepViT</h3>
-        <div class="meta">Md Abdur Rahaman (First Author) — Submitted to ICRPSET, 2026.</div>
-        <p>Developed a DCT-based frequency-channel attention fusion approach using RepViT. Achieved competitive performance on the Melanoma Skin Cancer Dataset (10,000 images) using significantly fewer parameters.</p>
+        <div class="authors"><strong>Md Abdur Rahaman (First Author)</strong></div>
+        <p style="font-size: 0.95rem;">Developed a DCT-based frequency-channel attention fusion approach using RepViT. Achieved competitive performance on a 10,000-image Melanoma dataset using significantly fewer parameters.</p>
+        <div class="item-links">
+            <a href="#">Preprint</a>
+            <a href="#">Code</a>
+        </div>
     </div>
-    <div class="card">
+
+    <div class="item-card">
+        <span class="venue">ICCIT 2026 (Under Review)</span>
         <h3>Adaptive Transfer Learning with EfficientNetB1 for Multi-Class Brain Tumor Identification in MRI Images</h3>
-        <div class="meta">Md Abdur Rahaman (Co-Author) — Submitted to ICCIT, 2026.</div>
-        <p>Applied EfficientNetB1 transfer learning for four-class brain tumor classification, achieving 98.00% accuracy and a 98.00% macro F1-score on MRI images.</p>
+        <div class="authors"><strong>Md Abdur Rahaman (Co-Author)</strong>, et al.</div>
+        <p style="font-size: 0.95rem;">Applied EfficientNetB1 transfer learning for four-class brain tumor classification, achieving 98.00% accuracy and a 98.00% macro F1-score on MRI images.</p>
+        <div class="item-links">
+            <a href="#">Preprint</a>
+        </div>
     </div>
 
-    <h2>🔬 Research Projects</h2>
-    <div class="card">
-        <h3>Diabetic Retinopathy Grading Using Hybrid CNN–Transformer</h3>
-        <p>Developed an EfficientNet-B2–DeiT hybrid with adaptive fusion and imbalance-aware training for five-stage grading on APTOS and DDR datasets.</p>
-        <div class="tags"><span class="tag">EfficientNet</span><span class="tag">DeiT</span><span class="tag">Medical AI</span></div>
-    </div>
-    <div class="card">
+    <!-- Research Projects Section -->
+    <h2>Research Projects</h2>
+
+    <div class="item-card">
+        <span class="venue">Environmental AI</span>
         <h3>Eco-YOLO: Marine Debris Detection with PG-EPE and YOLO11m</h3>
-        <p>Developed a 40-class marine debris detector combining a novel PG-EPE enhancement pipeline with YOLO11m on the SeaClear dataset. Achieved 87.5% mAP@0.5 and 57.6 FPS on a Tesla T4 with 20.08M parameters.</p>
-        <div class="tags"><span class="tag">YOLO11m</span><span class="tag">Object Detection</span><span class="tag">Environmental AI</span></div>
+        <p style="font-size: 0.95rem;">Developed a 40-class marine debris detector combining a novel PG-EPE enhancement pipeline with YOLO11m on the SeaClear dataset. Achieved 87.5% mAP@0.5 and 57.6 FPS on a Tesla T4 with 20.08M parameters.</p>
+        <div class="item-links">
+            <a href="#">GitHub</a>
+        </div>
     </div>
 
-    <h2>💻 Selected Software Projects</h2>
-    <div class="card">
+    <div class="item-card">
+        <span class="venue">Medical AI</span>
+        <h3>Diabetic Retinopathy Grading Using Hybrid CNN–Transformer</h3>
+        <p style="font-size: 0.95rem;">Developed an EfficientNet-B2–DeiT hybrid with adaptive fusion and imbalance-aware training for five-stage grading on APTOS and DDR datasets.</p>
+        <div class="item-links">
+            <a href="#">GitHub</a>
+        </div>
+    </div>
+
+    <!-- Software Projects Section -->
+    <h2>Software Projects</h2>
+    
+    <div class="item-card">
+        <span class="venue">RAG / LLMs</span>
         <h3>Opportunity Finder — RAG-Based Scholarship Matching</h3>
-        <p>Developed a Retrieval-Augmented Generation (RAG) application using LangChain to recommend Erasmus Mundus programs. Integrated web-scraped information, Hugging Face embeddings, FAISS vector search, and LLM-based reasoning.</p>
-        <div class="tags"><span class="tag">LangChain</span><span class="tag">FAISS</span><span class="tag">RAG</span></div>
-    </div>
-    <div class="card">
-        <h3>Computer Vision with OpenCV</h3>
-        <p>Implemented various image-processing experiments including webcam-based color detection, HSV conversion, color masking, and bounding-box detection.</p>
-        <div class="tags"><span class="tag">OpenCV</span><span class="tag">Python</span></div>
+        <p style="font-size: 0.95rem;">Developed a Retrieval-Augmented Generation (RAG) application using LangChain to recommend Erasmus Mundus programs. Integrated web-scraped information, Hugging Face embeddings, FAISS vector search, and LLM-based reasoning.</p>
     </div>
 
-    <h2>🎓 Education</h2>
-    <div class="edu-item">
-        <strong>B.Sc. in Computer Science & Engineering</strong>
-        <div class="meta">Rajshahi University of Engineering & Technology (RUET) | 2022 – 2026</div>
-        <div style="margin-top: 5px;"><strong>CGPA:</strong> 3.61 / 4.00</div>
-        <div style="margin-top: 5px; color: var(--text-muted); font-size: 0.9rem;"><strong>Relevant Coursework:</strong> Computer Vision, Deep Learning, Machine Learning, Linear Algebra, Probability & Statistics, Data Structures & Algorithms.</div>
+    <div class="item-card">
+        <span class="venue">Computer Vision</span>
+        <h3>Image Processing with OpenCV</h3>
+        <p style="font-size: 0.95rem;">Implemented computer vision experiments using Python and OpenCV, including webcam-based color detection, HSV conversion, color masking, and bounding-box detection.</p>
     </div>
+
+    <!-- Skills / Expertise -->
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+        <div class="skill-tag">Python / C++</div>
+        <div class="skill-tag">PyTorch</div>
+        <div class="skill-tag">Scikit-learn</div>
+        <div class="skill-tag">Hugging Face</div>
+        <div class="skill-tag">LangChain & RAG</div>
+        <div class="skill-tag">Computer Vision</div>
+        <div class="skill-tag">Medical Image Analysis</div>
+        <div class="skill-tag">RepViT & Transformers</div>
+        <div class="skill-tag">YOLO11m</div>
+        <div class="skill-tag">OpenCV</div>
+        <div class="skill-tag">FAISS</div>
+        <div class="skill-tag">Linux / Git</div>
+    </div>
+
+    <!-- Teaching Experience -->
+    <h2>Teaching Experience</h2>
+    <div class="item-card">
+        <h3>Private Tutor (SSC & HSC Students)</h3>
+        <p style="margin-bottom: 0;">Provided academic tutoring, conceptual guidance, problem-solving, and examination preparation for SSC and HSC students in Mathematics and Science.</p>
+    </div>
+
+    <!-- References -->
+    <h2>References</h2>
+    <div class="item-card">
+        <h3>Farjana Parvin</h3>
+        <p style="margin-bottom: 4px;">Assistant Professor, Department of CSE, RUET</p>
+        <a href="mailto:farjana@cse.ruet.ac.bd">farjana@cse.ruet.ac.bd</a>
+    </div>
+    <div class="item-card">
+        <h3>Md. Mazharul Islam</h3>
+        <p style="margin-bottom: 4px;">Lecturer, Department of CSE, RUET</p>
+        <a href="mailto:mazharul.islam@cse.ruet.ac.bd">mazharul.islam@cse.ruet.ac.bd</a>
+    </div>
+    <div class="item-card">
+        <h3>Barshon Sen</h3>
+        <p style="margin-bottom: 4px;">Assistant Professor, Department of CSE, RUET</p>
+        <a href="mailto:barshon.sen@cse.ruet.ac.bd">barshon.sen@cse.ruet.ac.bd</a>
+    </div>
+
+    <footer>
+        &copy; 2026 Md Abdur Rahaman · Hosted on GitHub Pages
+    </footer>
 
 </body>
 </html>
