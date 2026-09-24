@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Abdur Rahaman | AI Researcher & CSE Graduate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --bg-body: #f9fafb;
+            --bg-card: #ffffff;
+            --border: #e5e7eb;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: var(--bg-body);
+        }
+        h1, h2, h3 { color: #111827; margin-top: 0; }
+        h2 { 
+            border-bottom: 2px solid var(--primary); 
+            padding-bottom: 8px; 
+            margin-top: 40px; 
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+        
+        /* Header */
+        .header { margin-bottom: 30px; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 5px; letter-spacing: -0.025em; }
+        .header .subtitle { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 15px; }
+        .contact-links { display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.95rem; }
+        .contact-links span { color: var(--text-muted); }
+
+        /* Bio & Education */
+        .bio-box {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+        .edu-item { margin-bottom: 15px; }
+        .edu-item strong { display: block; font-size: 1.1rem; }
+        .edu-item .meta { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* Tags */
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+        .tag {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Cards (Publications & Projects) */
+        .card {
+            background: var(--bg-card);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .card h3 { margin-bottom: 8px; font-size: 1.15rem; }
+        .card .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; font-style: italic; }
+        
+        /* Achievements */
+        .achievement {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #fef3c7;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #fbbf24;
+        }
+        .achievement .icon { font-size: 1.5rem; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Md Abdur Rahaman</h1>
+        <div class="subtitle">CSE Graduate & AI Researcher</div>
+        <div class="contact-links">
+            <span>📍 Dhaka, Bangladesh</span>
+            <span>✉️ abdur.rahaman03155@gmail.com</span>
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+            <a href="#">Kaggle</a>
+        </div>
+    </div>
+
+    <div class="bio-box">
+        Computer Science and Engineering graduate from <strong>Rajshahi University of Engineering & Technology (RUET)</strong> with a strong academic background and research interests in Computer Vision, Deep Learning, Medical Image Analysis, and Environmental Object Detection. Experienced in developing attention-based architectures (RepViT, Transformers) for melanoma and brain tumor classification. Currently seeking a PhD position to advance research in medical computer vision and multimodal learning.
+    </div>
+
+    <h2>Research Interests & Technical Skills</h2>
+    <div class="tags">
+        <span class="tag">Medical Image Analysis</span>
+        <span class="tag">Computer Vision</span>
+        <span class="tag">Deep Learning</span>
+        <span class="tag">RepViT & Transformers</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">LangChain & RAG</span>
+        <span class="tag">YOLO11m</span>
+        <span class="tag">OpenCV</span>
+        <span class="tag">Python / C++</span>
+    </div>
+
+    <h2>🏆 Achievements</h2>
+    <div class="achievement">
+        <div class="icon">🥈</div>
+        <div>
+            <strong>NeurIPS Open Polymer Prediction 2025</strong><br>
+            <span style="color: var(--text-muted);">Silver Medal — Ranked 112th out of 2,240 teams globally for machine-learning-based polymer property prediction.</span>
+        </div>
+    </div>
+
+    <h2>📚 Manuscripts Under Review</h2>
+    <div class="card">
+        <h3>MeLALight: Melanoma Classification Using Multi-Stage DCT-Based Frequency-Channel Attention Fusion on RepViT</h3>
+        <div class="meta">Md Abdur Rahaman (First Author) — Submitted to ICRPSET, 2026.</div>
+        <p>Developed a DCT-based frequency-channel attention fusion approach using RepViT. Achieved competitive performance on the Melanoma Skin Cancer Dataset (10,000 images) using significantly fewer parameters.</p>
+    </div>
+    <div class="card">
+        <h3>Adaptive Transfer Learning with EfficientNetB1 for Multi-Class Brain Tumor Identification in MRI Images</h3>
+        <div class="meta">Md Abdur Rahaman (Co-Author) — Submitted to ICCIT, 2026.</div>
+        <p>Applied EfficientNetB1 transfer learning for four-class brain tumor classification, achieving 98.00% accuracy and a 98.00% macro F1-score on MRI images.</p>
+    </div>
+
+    <h2>🔬 Research Projects</h2>
+    <div class="card">
+        <h3>Diabetic Retinopathy Grading Using Hybrid CNN–Transformer</h3>
+        <p>Developed an EfficientNet-B2–DeiT hybrid with adaptive fusion and imbalance-aware training for five-stage grading on APTOS and DDR datasets.</p>
+        <div class="tags"><span class="tag">EfficientNet</span><span class="tag">DeiT</span><span class="tag">Medical AI</span></div>
+    </div>
+    <div class="card">
+        <h3>Eco-YOLO: Marine Debris Detection with PG-EPE and YOLO11m</h3>
+        <p>Developed a 40-class marine debris detector combining a novel PG-EPE enhancement pipeline with YOLO11m on the SeaClear dataset. Achieved 87.5% mAP@0.5 and 57.6 FPS on a Tesla T4 with 20.08M parameters.</p>
+        <div class="tags"><span class="tag">YOLO11m</span><span class="tag">Object Detection</span><span class="tag">Environmental AI</span></div>
+    </div>
+
+    <h2>💻 Selected Software Projects</h2>
+    <div class="card">
+        <h3>Opportunity Finder — RAG-Based Scholarship Matching</h3>
+        <p>Developed a Retrieval-Augmented Generation (RAG) application using LangChain to recommend Erasmus Mundus programs. Integrated web-scraped information, Hugging Face embeddings, FAISS vector search, and LLM-based reasoning.</p>
+        <div class="tags"><span class="tag">LangChain</span><span class="tag">FAISS</span><span class="tag">RAG</span></div>
+    </div>
+    <div class="card">
+        <h3>Computer Vision with OpenCV</h3>
+        <p>Implemented various image-processing experiments including webcam-based color detection, HSV conversion, color masking, and bounding-box detection.</p>
+        <div class="tags"><span class="tag">OpenCV</span><span class="tag">Python</span></div>
+    </div>
+
+    <h2>🎓 Education</h2>
+    <div class="edu-item">
+        <strong>B.Sc. in Computer Science & Engineering</strong>
+        <div class="meta">Rajshahi University of Engineering & Technology (RUET) | 2022 – 2026</div>
+        <div style="margin-top: 5px;"><strong>CGPA:</strong> 3.61 / 4.00</div>
+        <div style="margin-top: 5px; color: var(--text-muted); font-size: 0.9rem;"><strong>Relevant Coursework:</strong> Computer Vision, Deep Learning, Machine Learning, Linear Algebra, Probability & Statistics, Data Structures & Algorithms.</div>
+    </div>
+
+</body>
+</html>
